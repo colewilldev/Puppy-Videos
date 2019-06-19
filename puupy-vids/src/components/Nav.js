@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { login, loggedOut, isLoggedIn } from '../utils/AuthService';
+import { login, logout, isLoggedIn } from '../utils/AuthService';
 
 import '../App.css';
 
-export default class Nav extends Component { 
+class Nav extends Component { 
   render() { 
     return (
       <nav className="nav navbar-default">
         <div className="navbar-header">
-          <link className="navbar-brand" to="/">Puppy Flix</link>
+          <Link className="navbar-brand" to="/">Puppy Flix</Link>
         </div>
         <ul className="nav navbar-nav">
           <li>
@@ -24,7 +24,7 @@ export default class Nav extends Component {
         <ul className="nav navbar-right navbar-nav">
           <li>
             {
-              (isLoggedIn()) ? (<button className="btn btn-danger log" onClick={() => loggedOut()}>Log Out</button>) : (<button className="btn btn-info log" onClick={()=>login()}>Log In</button>)
+              (isLoggedIn()) ? (<button className="btn btn-danger log" onClick={() => logout()}>Log Out</button>) : (<button className="btn btn-info log" onClick={()=>login()}>Log In</button>)
             }
           </li>
         </ul>
@@ -32,3 +32,5 @@ export default class Nav extends Component {
     );
   }
 }
+
+export default Nav;

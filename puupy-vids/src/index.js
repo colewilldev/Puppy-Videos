@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import Upload from './components/Upload';
 import Display from './components/Display';
 import Callback from './components/Callback';
-import registerServiceWorker from './registerServiceWorker';
+import * as serviceWorker from './serviceWorker';
 import { Router, Route, browserHistory } from 'react-router';
+import { Link } from 'react-router';
 import { requireAuth } from './utils/AuthService';
+import PropTypes from 'prop-types';
 
 const Root = () => { 
   return (
@@ -20,4 +22,4 @@ const Root = () => {
 }
 
 ReactDOM.render(<Root />, document.getElementById('root'));
-registerServiceWorker();
+serviceWorker.unregister();
