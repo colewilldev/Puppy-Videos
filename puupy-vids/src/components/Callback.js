@@ -10,6 +10,6 @@ export default class Callback extends Component{
   render() { 
     return (
       null
-    )
+    );
   }
 }
